@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Записаться — HairLab</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+  <div class="logo"><span>Hair</span>Lab</div>
+  <button class="burger">☰</button>
+  <nav>
+    <a href="../index.html">Главная</a>
+    <a href="uslugi.html">Услуги</a>
+    <a href="mastera.html">Мастера</a>
+    <a href="ceny.html">Цены</a>
+    <a href="zapis.html">Записаться</a>
+    <a href="kontakty.html">Контакты</a>
+    <a href="login.html" class="auth-link">Войти</a>
+  </nav>
+</div>
+</header>
+<main class="content-wrap">
+
+<div class="form-box form-box-offset">
+<h2>Записаться</h2>
+
+<div id="msg" class="form-msg"></div>
+<div id="err" class="form-err"></div>
+
+<div class="input-group">
+  <label>Услуга</label>
+  <select id="service">
+    <option value="">Выберите услугу</option>
+    <option>Мужская стрижка</option>
+    <option>Стрижка машинкой</option>
+    <option>Детская стрижка</option>
+    <option>Оформление бороды</option>
+    <option>Стрижка + борода</option>
+    <option>Бритьё опасной бритвой</option>
+    <option>Бритьё головы</option>
+    <option>Укладка волос</option>
+    <option>Камуфляж седины</option>
+  </select>
+</div>
+
+<div class="input-group">
+  <label>Мастер</label>
+  <select id="master">
+    <option value="">Выберите мастера</option>
+    <option>Артём Медведев</option>
+    <option>Дмитрий Козлов</option>
+    <option>Иван Смирнов</option>
+    <option>Павел Новиков</option>
+  </select>
+</div>
+
+<div class="input-group">
+  <label>Дата</label>
+  <input type="date" id="date">
+</div>
+
+<div class="input-group">
+  <label>Время</label>
+  <select id="time">
+    <option value="">Выберите время</option>
+    <option>09:00</option>
+    <option>10:00</option>
+    <option>11:00</option>
+    <option>12:00</option>
+    <option>13:00</option>
+    <option>14:00</option>
+    <option>15:00</option>
+    <option>16:00</option>
+    <option>17:00</option>
+    <option>18:00</option>
+    <option>19:00</option>
+    <option>20:00</option>
+  </select>
+</div>
+
+<div class="input-group">
+  <label>Ваше имя</label>
+  <input type="text" id="clientName" placeholder="Иван">
+</div>
+
+<div class="input-group">
+  <label>Телефон</label>
+  <input type="text" id="clientPhone" placeholder="+7 (999) 123-45-67">
+</div>
+
+<button class="submit-btn" id="bookBtn">Записаться</button>
+</div>
+
+</main>
+
+<footer>
+<div class="footer-inner">
+  <table>
+    <tr>
+      <td>
+        <h3>HairLab</h3>
+        <p>Парикмахерская в Оренбурге.</p>
+      </td>
+      <td>
+        <h3>Навигация</h3>
+        <a href="../index.html">Главная</a><br>
+        <a href="uslugi.html">Услуги</a><br>
+        <a href="mastera.html">Мастера</a><br>
+        <a href="ceny.html">Цены</a><br>
+        <a href="zapis.html">Записаться</a>
+      </td>
+      <td>
+        <h3>Контакты</h3>
+        <p>Оренбург, ул. Пушкина, д. 10</p>
+        <p>+7 (999) 123-45-67</p>
+        <p>info@hairlab.ru</p>
+      </td>
+    </tr>
+  </table>
+  <div class="footer-bottom">
+    <p>© 2026 HairLab. Все права защищены.</p>
+  </div>
+</div>
+</footer>
+
+<script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/booking.js"></script>
+</body>
+</html>

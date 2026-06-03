@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Личный кабинет — HairLab</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+  <div class="logo"><span>Hair</span>Lab</div>
+  <button class="burger">☰</button>
+  <nav>
+    <a href="../index.html">Главная</a>
+    <a href="uslugi.html">Услуги</a>
+    <a href="mastera.html">Мастера</a>
+    <a href="ceny.html">Цены</a>
+    <a href="zapis.html">Записаться</a>
+    <a href="kontakty.html">Контакты</a>
+    <a href="login.html" class="auth-link">Войти</a>
+  </nav>
+</div>
+</header>
+<main class="content-wrap">
+
+<div class="cabinet-wrap">
+<div class="user-card">
+  <table>
+    <tr>
+      <td class="user-info-td">
+        <div class="avatar-box" id="avatarLetter">?</div>
+      </td>
+      <td class="user-info-td">
+        <h2 id="userName" class="user-name">Загрузка...</h2>
+        <p id="userEmail" class="user-meta"></p>
+        <p id="userPhone" class="user-meta"></p>
+        <br>
+        <a href="#" id="logoutLink" class="logout-link">→ Выйти</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h2 class="section-title-apps">Мои записи</h2>
+
+<div id="noApps" class="no-apps">
+  <p>У вас пока нет записей.</p>
+  <br>
+  <a href="zapis.html" class="btn">Записаться</a>
+</div>
+
+<table class="apps-table hidden" id="appsTable">
+  <thead>
+    <tr>
+      <th>Услуга</th>
+      <th>Мастер</th>
+      <th>Дата</th>
+      <th>Время</th>
+      <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody id="appsBody"></tbody>
+</table>
+</div>
+
+</main>
+
+<footer>
+<div class="footer-inner">
+  <table>
+    <tr>
+      <td>
+        <h3>HairLab</h3>
+        <p>Парикмахерская в Оренбурге.</p>
+      </td>
+      <td>
+        <h3>Навигация</h3>
+        <a href="../index.html">Главная</a><br>
+        <a href="uslugi.html">Услуги</a><br>
+        <a href="mastera.html">Мастера</a><br>
+        <a href="ceny.html">Цены</a><br>
+        <a href="zapis.html">Записаться</a>
+      </td>
+      <td>
+        <h3>Контакты</h3>
+        <p>Оренбург, ул. Пушкина, д. 10</p>
+        <p>+7 (999) 123-45-67</p>
+        <p>info@hairlab.ru</p>
+      </td>
+    </tr>
+  </table>
+  <div class="footer-bottom">
+    <p>© 2026 HairLab. Все права защищены.</p>
+  </div>
+</div>
+</footer>
+
+<script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/cabinet.js"></script>
+</body>
+</html>

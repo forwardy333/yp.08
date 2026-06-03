@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход / Регистрация — HairLab</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+  <div class="logo"><span>Hair</span>Lab</div>
+  <button class="burger">☰</button>
+  <nav>
+    <a href="../index.html">Главная</a>
+    <a href="uslugi.html">Услуги</a>
+    <a href="mastera.html">Мастера</a>
+    <a href="ceny.html">Цены</a>
+    <a href="zapis.html">Записаться</a>
+    <a href="kontakty.html">Контакты</a>
+    <a href="login.html" class="auth-link">Войти</a>
+  </nav>
+</div>
+</header>
+<main class="content-wrap">
+
+<div class="form-box" id="loginForm">
+<h2>Вход</h2>
+<div id="loginError" class="error-msg"></div>
+
+<div class="input-group">
+  <label>Email:</label>
+  <input type="email" id="loginEmail">
+</div>
+
+<div class="input-group">
+  <label>Пароль:</label>
+  <input type="password" id="loginPassword">
+</div>
+
+<button class="submit-btn" id="loginBtn">Войти</button>
+
+<p class="form-switch">
+  Нет аккаунта? <a href="#" id="showRegLink">Зарегистрироваться</a>
+</p>
+</div>
+
+<div class="form-box hidden" id="regForm">
+<h2>Регистрация</h2>
+<div id="regError" class="error-msg"></div>
+
+<div class="input-group">
+  <label>Имя:</label>
+  <input type="text" id="regName">
+</div>
+
+<div class="input-group">
+  <label>Email:</label>
+  <input type="email" id="regEmail">
+</div>
+
+<div class="input-group">
+  <label>Телефон:</label>
+  <input type="text" id="regPhone">
+</div>
+
+<div class="input-group">
+  <label>Пароль:</label>
+  <input type="password" id="regPassword">
+</div>
+
+<div class="input-group">
+  <label>Повторите пароль:</label>
+  <input type="password" id="regPassword2">
+</div>
+
+<button class="submit-btn" id="regBtn">Зарегистрироваться</button>
+
+<p class="form-switch">
+  Уже есть аккаунт? <a href="#" id="showLoginLink">Войти</a>
+</p>
+</div>
+
+</main>
+
+<footer>
+<div class="footer-inner">
+  <table>
+    <tr>
+      <td>
+        <h3>HairLab</h3>
+        <p>Парикмахерская в Оренбурге.</p>
+      </td>
+      <td>
+        <h3>Меню</h3>
+        <a href="../index.html">Главная</a><br>
+        <a href="uslugi.html">Услуги</a><br>
+        <a href="mastera.html">Мастера</a><br>
+        <a href="ceny.html">Цены</a><br>
+        <a href="zapis.html">Записаться</a>
+      </td>
+      <td>
+        <h3>Контакты</h3>
+        <p>Оренбург, ул. Пушкина, д. 10</p>
+        <p>+7 (999) 123-45-67</p>
+        <p>info@hairlab.ru</p>
+      </td>
+    </tr>
+  </table>
+  <div class="footer-bottom">
+    <p>© 2026 HairLab. Все права защищены.</p>
+  </div>
+</div>
+</footer>
+
+<script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/login-page.js"></script>
+</body>
+</html>
