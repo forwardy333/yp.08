@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Админ-панель — HairLab</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+  <div class="logo"><span>Hair</span>Lab</div>
+  <button class="burger">☰</button>
+  <nav>
+    <a href="../index.html">Главная</a>
+    <a href="uslugi.html">Услуги</a>
+    <a href="mastera.html">Мастера</a>
+    <a href="zapis.html">Записаться</a>
+    <a href="lk.html">Личный кабинет</a>
+    <a href="#" id="logoutLink">Выйти</a>
+  </nav>
+</div>
+</header>
+
+<main class="content-wrap">
+<div class="admin-wrap">
+
+<h2 class="section-title-apps">Админ-панель</h2>
+<div id="accessMsg" class="no-apps" style="display:none">Доступ только для администратора. <a href="login.html">Войти</a></div>
+
+<div id="adminContent" style="display:none">
+
+  <div class="admin-stats" id="statsBox">
+    <div class="stat-card"><span id="stUsers">0</span><label>Пользователей</label></div>
+    <div class="stat-card"><span id="stBookings">0</span><label>Записей</label></div>
+    <div class="stat-card"><span id="stPending">0</span><label>Ожидают</label></div>
+    <div class="stat-card"><span id="stMasters">0</span><label>Мастеров</label></div>
+    <div class="stat-card"><span id="stServices">0</span><label>Услуг</label></div>
+    <div class="stat-card"><span id="stReviews">0</span><label>Отзывов</label></div>
+  </div>
+
+  <div class="admin-tabs">
+    <button class="tab-btn active" data-tab="tabBookings">Записи</button>
+    <button class="tab-btn" data-tab="tabUsers">Пользователи</button>
+    <button class="tab-btn" data-tab="tabServices">Услуги</button>
+    <button class="tab-btn" data-tab="tabMasters">Мастера</button>
+    <button class="tab-btn" data-tab="tabReviews">Отзывы</button>
+  </div>
+
+  <div id="msg" class="form-msg"></div>
+
+  <!-- Записи -->
+  <section id="tabBookings" class="tab-panel">
+    <table class="apps-table">
+      <thead>
+        <tr><th>Клиент</th><th>Услуга</th><th>Мастер</th><th>Дата и время</th><th>Статус</th><th>Действия</th></tr>
+      </thead>
+      <tbody id="bookingsBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Пользователи -->
+  <section id="tabUsers" class="tab-panel" style="display:none">
+    <table class="apps-table">
+      <thead>
+        <tr><th>ID</th><th>Логин</th><th>Email</th><th>Телефон</th><th>Роль</th><th>Действия</th></tr>
+      </thead>
+      <tbody id="usersBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Услуги -->
+  <section id="tabServices" class="tab-panel" style="display:none">
+    <form class="admin-form" id="serviceForm">
+      <input type="hidden" id="svcId">
+      <input type="text" id="svcName" placeholder="Название услуги" required>
+      <input type="number" id="svcPrice" placeholder="Цена, ₽" step="0.01" min="0" required>
+      <input type="number" id="svcDuration" placeholder="Длительность, мин" min="0">
+      <button class="submit-btn" type="submit">Добавить</button>
+    </form>
+    <table class="apps-table">
+      <thead><tr><th>ID</th><th>Название</th><th>Цена</th><th>Длительность</th><th>Действия</th></tr></thead>
+      <tbody id="servicesBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Мастера -->
+  <section id="tabMasters" class="tab-panel" style="display:none">
+    <form class="admin-form" id="masterForm">
+      <input type="hidden" id="mstId">
+      <input type="text" id="mstName" placeholder="Имя мастера" required>
+      <input type="text" id="mstSpec" placeholder="Специализация">
+      <input type="text" id="mstPhone" placeholder="Телефон">
+      <input type="text" id="mstDesc" placeholder="Описание">
+      <button class="submit-btn" type="submit">Добавить</button>
+    </form>
+    <table class="apps-table">
+      <thead><tr><th>ID</th><th>Имя</th><th>Специализация</th><th>Телефон</th><th>Действия</th></tr></thead>
+      <tbody id="mastersBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Отзывы -->
+  <section id="tabReviews" class="tab-panel" style="display:none">
+    <table class="apps-table">
+      <thead><tr><th>Автор</th><th>Мастер</th><th>Оценка</th><th>Комментарий</th><th>Дата</th><th>Действия</th></tr></thead>
+      <tbody id="reviewsBody"></tbody>
+    </table>
+  </section>
+
+</div>
+</div>
+</main>
+
+<footer>
+<div class="footer-inner">
+  <table>
+    <tr>
+      <td>
+        <h3>HairLab</h3>
+        <p>Парикмахерская в Оренбурге.</p>
+      </td>
+      <td>
+        <h3>Навигация</h3>
+        <a href="../index.html">Главная</a><br>
+        <a href="uslugi.html">Услуги</a><br>
+        <a href="mastera.html">Мастера</a><br>
+        <a href="zapis.html">Записаться</a>
+      </td>
+      <td>
+        <h3>Контакты</h3>
+        <p>Оренбург, ул. Пушкина, д. 10</p>
+        <p>+7 (999) 123-45-67</p>
+        <p>info@hairlab.ru</p>
+      </td>
+    </tr>
+  </table>
+  <div class="footer-bottom">
+    <p>© 2026 HairLab. Все права защищены.</p>
+  </div>
+</div>
+</footer>
+
+<script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

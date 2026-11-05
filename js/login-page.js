@@ -68,7 +68,7 @@ async function handleLogin() {
 
   var res = await login(email, pass);
   if (res.success) {
-    location.href = 'lk.html';
+    location.href = res.user && res.user.role === 'admin' ? 'admin.html' : 'lk.html';
   } else {
     err.innerHTML = res.message;
     err.style.display = 'block';

@@ -23,13 +23,14 @@ if (!apps || apps.length == 0) {
   var tbody = document.getElementById('appsBody');
   for (var i = 0; i < apps.length; i++) {
     var a = apps[i];
-    var cls = a.Статус == 'confirmed' ? 'badge-green' : 'badge-yellow';
-    var txt = a.Статус == 'confirmed' ? 'Подтверждено' : 'Ожидает';
+    var status = a.status || 'pending';
+    var cls = status == 'confirmed' ? 'badge-green' : 'badge-yellow';
+    var txt = status == 'confirmed' ? 'Подтверждено' : status == 'completed' ? 'Выполнено' : status == 'cancelled' ? 'Отменено' : 'Ожидает';
+    if (status == 'cancelled') cls = 'badge-yellow';
     var tr = document.createElement('tr');
-    var d = new Date(a.Дата).toLocaleDateString('ru-RU');
-    var t = a.Время;
-    var timeStr = typeof t === 'string' ? t.slice(11, 16) : String(t).slice(0, 5);
-    tr.innerHTML = '<td>' + a.Услуга + '</td><td>' + a.Мастер + '</td><td>' + d + '</td><td>' + timeStr + '</td><td><span class="badge ' + cls + '">' + txt + '</span></td>';
+    var d = new Date(a.appointment_datetime).toLocaleDateString('ru-RU');
+    var timeStr = new Date(a.appointment_datetime).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    tr.innerHTML = '<td>' + a.service + '</td><td>' + a.master + '</td><td>' + d + '</td><td>' + timeStr + '</td><td><span class="badge ' + cls + '">' + txt + '</span></td>';
     tbody.appendChild(tr);
   }
 }
@@ -40,5 +41,11 @@ if (logoutLink) {
     e.preventDefault();
     logout();
   });
+}
+
+// Ссылка на админ-панель — только для роли admin
+if (isAdmin()) {
+  var adminBox = document.getElementById('adminBox');
+  if (adminBox) adminBox.style.display = 'block';
 }
 });

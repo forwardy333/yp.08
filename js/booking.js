@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+  loadBookingOptions();
+
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -38,6 +40,36 @@ function showBookingError(msg) {
   var el = document.getElementById('err');
   el.innerHTML = msg;
   el.style.display = 'block';
+}
+
+// Загрузка услуг и мастеров из БД в выпадающие списки
+async function loadBookingOptions() {
+  try {
+    var services = await fetchServices();
+    var masters = await fetchMasters();
+
+    var serviceSelect = document.getElementById('service');
+    serviceSelect.innerHTML = '<option value="">Выберите услугу</option>';
+    for (var i = 0; i < services.length; i++) {
+      var s = services[i];
+      var opt = document.createElement('option');
+      opt.value = s['PK_id_услуги'];
+      opt.textContent = s.name_service + ' — ' + s.price + ' ₽';
+      serviceSelect.appendChild(opt);
+    }
+
+    var masterSelect = document.getElementById('master');
+    masterSelect.innerHTML = '<option value="">Выберите мастера</option>';
+    for (var j = 0; j < masters.length; j++) {
+      var m = masters[j];
+      var o = document.createElement('option');
+      o.value = m.id_master;
+      o.textContent = m.name + (m.specialization ? ' (' + m.specialization + ')' : '');
+      masterSelect.appendChild(o);
+    }
+  } catch (e) {
+    showBookingError('Не удалось загрузить услуги и мастеров');
+  }
 }
 
 function validatePhoneBooking(phone) {
@@ -84,8 +116,8 @@ async function bookAppointment() {
       document.getElementById('msg').style.display = 'block';
     }
   } else {
-    document.getElementById('msg').innerHTML = 'Запись отправлена! Мы вам перезвоним.';
-    document.getElementById('msg').style.display = 'block';
+    showBookingError('Чтобы записаться, необходимо <a href="login.html">войти</a> в личный кабинет');
+    return;
   }
 
   document.getElementById('service').value = '';

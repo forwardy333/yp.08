@@ -1954,3 +1954,22 @@ body {
     gap: 16px;
   }
 }
+
+/* ===== Админ-панель ===== */
+.admin-wrap { max-width: 1100px; margin: 0 auto; padding: 100px 20px 60px; }
+.admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 25px; }
+.stat-card { background: #fdfaf5; border: 1px solid #ddd0c0; border-radius: 8px; padding: 16px; text-align: center; }
+.stat-card span { display: block; font-size: 28px; font-weight: bold; color: #a0522d; }
+.stat-card label { font-size: 13px; color: #5a4030; }
+.admin-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.tab-btn { padding: 9px 18px; border: 1px solid #a0522d; background: #fff; color: #a0522d; border-radius: 20px; cursor: pointer; font-size: 14px; transition: .2s; }
+.tab-btn:hover { background: #f5e9e0; }
+.tab-btn.active { background: #a0522d; color: #fff; }
+.tab-panel { background: #fff; border: 1px solid #ddd0c0; border-radius: 8px; padding: 15px; overflow-x: auto; }
+.admin-form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.admin-form input { padding: 9px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; flex: 1 1 160px; }
+.mini-btn { padding: 5px 10px; font-size: 12px; border: 1px solid #a0522d; background: #fff; color: #a0522d; border-radius: 5px; cursor: pointer; }
+.mini-btn:hover { background: #a0522d; color: #fff; }
+.mini-btn.danger { border-color: #c0392b; color: #c0392b; }
+.mini-btn.danger:hover { background: #c0392b; color: #fff; }
+.status-select { padding: 5px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; }
